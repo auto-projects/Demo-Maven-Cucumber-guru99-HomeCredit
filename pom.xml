@@ -91,8 +91,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-                        <include>**/*/CucumberTestRunner.java</include>
+                        <include>**/*/Guru99TestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -110,11 +111,15 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>BANKGURU99 CUCUMBER REPORT HTML</projectName>
+                            <projectName>GURU99 BANK CUCUMBER REPORT HTML</projectName>
+<!--                            <skip>false</skip>-->
+
                             <outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
-<!--                            <cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>-->
-<!--                            <enableFlashCharts>true</enableFlashCharts>-->
-<!--                            <skippedFails>true</skippedFails>-->
+                            <inputDirectory>${project.build.directory}/site/cucumber.json</inputDirectory>
+                            <jsonFiles>
+                                <param>**/*.json</param>
+                            </jsonFiles>
+                            <checkBuildResult>false</checkBuildResult>
                         </configuration>
                     </execution>
                 </executions>
