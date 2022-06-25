@@ -16,6 +16,7 @@ public class RegisterPageObject extends BasePage {
     }
 
     public void closeAdsPopup() {
+    	try {
         WebElement iFrame1 = driver.findElement(By.id("google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0"));
         driver.switchTo().frame(iFrame1);
         WebElement iFrame2 = driver.findElement(By.id("ad_iframe"));
@@ -23,6 +24,10 @@ public class RegisterPageObject extends BasePage {
         waitForElementClickable(driver, LoginPageUI.CLOSE_ADS_BUTTON);
         clickOnElement(driver, LoginPageUI.CLOSE_ADS_BUTTON);
         driver.switchTo().defaultContent();
+    	} catch (Exception e) {
+    		waitForElementClickable(driver, LoginPageUI.X_ADS_BUTTON);
+            clickOnElement(driver, LoginPageUI.X_ADS_BUTTON);
+    	}
     }
     public void inputToEmailTextbox(String email) {
         waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);

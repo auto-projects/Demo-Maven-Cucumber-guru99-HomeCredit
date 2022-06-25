@@ -35,8 +35,10 @@ public class LoginPageSteps {
 
     @And("^Successful page is displayed$")
     public void successfulPageIsDisplayed() {
-        Assert.assertTrue(homePage.isSuccessfulMessageDisplayed(driver, "Welcome To Manager's Page of Guru99 Bank"));
-        Assert.assertTrue(homePage.isUserIDDisplayed(driver, "Manger Id : " + RegisterPageSteps.userID));
+//        Assert.assertTrue(homePage.isSuccessfulMessageDisplayed(driver, "Welcome To Manager's Page of Guru99 Bank"));
+        Assert.assertEquals(homePage.getSuccessfulMessageDisplayed(), "Welcome To Manager's Page of Guru99 Bank");
+//        Assert.assertTrue(homePage.isUserIDDisplayed(driver, "Manger Id : " + RegisterPageSteps.userID));
+        Assert.assertEquals(homePage.getUserIDMessageDisplayed(), "Manger Id : " + RegisterPageSteps.userID);
     }
 
 }

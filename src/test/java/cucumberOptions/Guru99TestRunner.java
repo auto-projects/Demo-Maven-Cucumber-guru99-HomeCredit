@@ -16,7 +16,7 @@ import cucumber.api.junit.Cucumber;
 		plugin = { "pretty", "html: target/site/cucumber-report-default", "json: target/site/cucumber.json" },
 
 		snippets = SnippetType.CAMELCASE,
-		tags = { "@register_new_account" })
+		tags = { "@register_new_account, @login_new_account, @create_new_customer" })
 
 public class Guru99TestRunner {
 

@@ -35,7 +35,7 @@ public class DataUtil {
     }
 
     public String getAddress() {
-        return faker.address().fullAddress();
+        return faker.address().streetAddress();
     }
 
     public String getCity() {

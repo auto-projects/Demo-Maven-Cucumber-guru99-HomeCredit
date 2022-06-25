@@ -58,7 +58,7 @@ public class HomePageSteps {
 
     @Then("^Click on Gender radio button$")
     public void click_on_gender_radio_button() {
-        homePage.inputToTextboxByName(driver, "rad1", gender);
+        homePage.checkOnRadioButton(driver, "f");
 
     }
 

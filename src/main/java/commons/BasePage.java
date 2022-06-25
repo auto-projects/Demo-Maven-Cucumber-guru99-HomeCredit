@@ -587,8 +587,8 @@ public class BasePage {
         clickOnElement(driver, BasePageUI.BUTTON_BY_NAME, buttonByName);
     }
 
-    public Object getInfoValueByText(WebDriver driver, String valueInfoByText) {
+    public String getInfoValueByText(WebDriver driver, String valueInfoByText) {
         waitForElementVisible(driver, BasePageUI.INFO_VALUE_BY_TEXT, valueInfoByText );
-        return getElementText(driver, BasePageUI.INFO_VALUE_BY_TEXT, "value", valueInfoByText);
+        return getElementText(driver, BasePageUI.INFO_VALUE_BY_TEXT, valueInfoByText);
     }
 }

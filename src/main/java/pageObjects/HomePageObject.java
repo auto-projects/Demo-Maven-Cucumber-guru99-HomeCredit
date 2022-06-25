@@ -20,6 +20,10 @@ public class HomePageObject extends BasePage {
         waitForElementVisible(driver, HomePageUI.USER_ID_MESSAGE, userID);
         return isElementDisplayed(driver, HomePageUI.USER_ID_MESSAGE, userID);
     }
+    public void checkOnRadioButton(WebDriver driver, String radioButton) {
+    	waitForElementClickable(driver, HomePageUI.RADIO_BUTTON, radioButton);
+    	checkToDefaultCheckboxOrRadio(driver, HomePageUI.RADIO_BUTTON, radioButton);
+    }
 
     public void inputToAddressTextbox(WebDriver driver, String address) {
         waitForElementVisible(driver, HomePageUI.ADDRESS_TEXTBOX);
@@ -30,4 +34,14 @@ public class HomePageObject extends BasePage {
         waitForElementVisible(driver, HomePageUI.SUCCESSFUL_MESSAGE_OF_NEW_CUSTOMER, messageValue);
         return isElementDisplayed(driver, HomePageUI.SUCCESSFUL_MESSAGE_OF_NEW_CUSTOMER, messageValue);
     }
+
+	 public String getSuccessfulMessageDisplayed() {
+        waitForElementVisible(driver, HomePageUI.SUCCESSFUL_MESSAGE);
+        return getElementText(driver,HomePageUI.SUCCESSFUL_MESSAGE);
+	}
+
+	 public String getUserIDMessageDisplayed() {
+	        waitForElementVisible(driver, HomePageUI.USER_ID_MESSAGE);
+	        return getElementText(driver, HomePageUI.USER_ID_MESSAGE);
+	}
 }

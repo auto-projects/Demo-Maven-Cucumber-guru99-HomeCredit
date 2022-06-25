@@ -65,7 +65,7 @@ import pageObjects.RegisterPageObject;
         @Then("^Open Login Page again$")
         public void open_login_page_again() {
         accessDetailsPage.openLoginPage(driver);
-        //loginPage = PageGeneratorManager.getLoginPage(driver);
+        loginPage = PageGeneratorManager.getLoginPage(driver);
 
         }
 
